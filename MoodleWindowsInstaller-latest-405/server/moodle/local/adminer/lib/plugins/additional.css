@@ -1,7 +1,0 @@
-body {
-    background-image: none;
-}
-/* Remove the adminer lang menu */
-form div#lang {
-	display: none;
-}
