@@ -1,7 +1,7 @@
 
 ![ds_index](https://github.com/user-attachments/assets/ea81762f-d852-4e73-a2f2-da35517678ad)
 ![ds_scheduled_task](https://github.com/user-attachments/assets/9b58b028-dd7e-4e02-b155-e686160230e6)
-# Plugin Moodle: Monitoramento de Evasão e Envio de E-mails
+# Plugin Moodle: Monitoramento de Evasão e Envio de E-mails / Dropout Monitor 
 Descrição
 
 Este plugin para Moodle monitora a evasão de alunos em cursos, verificando o tempo desde o último login. Se um aluno ultrapassar um período configurável sem acessar a plataforma, o plugin envia um e-mail personalizado para incentivá-lo a retornar ao curso.
@@ -40,14 +40,6 @@ Configuração
 
 Acesse Administração do Site > Plugins > Evasão de Cursos > Configurações.
 
-Defina:
-
-Período de Inatividade: Número de dias sem login para acionar a notificação.
-
-Mensagem de E-mail: Personalize o assunto e o corpo da mensagem.
-
-Intervalo de Verificação: Frequência com que o sistema verifica a evasão.
-
 Como Usar
 
 O sistema verifica automaticamente os alunos inativos e envia e-mails com base nas configurações definidas.
@@ -58,11 +50,9 @@ Personalização
 
 Para personalizações adicionais, modifique os seguintes arquivos:
 
-locallib.php: Lógica principal do plugin.
-
-settings.php: Configurações de administração.
-
-language/pt_br/pluginname.php: Mensagens e textos exibidos no Moodle.
+email_manager.php: Lógica principal do plugin, definição da frequência de envio de e-mails, e-mails personalizados.
+observer.php: Alteração do tempo para consideração de usuário inativo
+language/en/pluginname.php: Mensagens e textos exibidos no Moodle.
 
 Licença
 
