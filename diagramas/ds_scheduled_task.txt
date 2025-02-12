@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant Usuario
+    participant Moodle
+    participant BancoDeDados
+
+    Moodle->>Moodle: Executa tarefas agendadas via cronjob
+    Moodle->>BancoDeDados: Obtém usuários inativos
+    BancoDeDados-->>Moodle: Retorna lista de usuários inativos
+
+    loop Para cada usuário inativo
+        Moodle->>BancoDeDados: Verifica se um email foi enviado nas últimas 24h
+        BancoDeDados-->>Moodle: Retorna status do último envio
+
+        alt Email enviado nas últimas 24h
+            Moodle->>Moodle: Ignora o usuário
+        else
+            Moodle->>BancoDeDados: Obtém grau de evasão do usuário
+            BancoDeDados-->>Moodle: Retorna grau de evasão
+            Moodle->>SMTP: Envia email personalizado conforme grau de evasão
+            SMTP-->>Moodle: Confirmação de envio (sucesso/falha)
+        end
+    end
+
+    Moodle-->>Usuario: Exibe última execução do plugin pelo cronjob
