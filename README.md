@@ -1,3 +1,6 @@
+
+![ds_index](https://github.com/user-attachments/assets/ea81762f-d852-4e73-a2f2-da35517678ad)
+![ds_scheduled_task](https://github.com/user-attachments/assets/9b58b028-dd7e-4e02-b155-e686160230e6)
 # Plugin Moodle: Monitoramento de Evasão e Envio de E-mails
 Descrição
 
